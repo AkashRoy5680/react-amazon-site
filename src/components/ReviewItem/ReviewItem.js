@@ -5,6 +5,7 @@ import "./ReviewItem.css"
 const ReviewItem = (props) => {
     const{product,handleRemoveProduct}=props;
     const{name,price,img,shipping,quantity}=product;
+    console.log(product)
     return (
         <div className='review-item'> 
             <div>

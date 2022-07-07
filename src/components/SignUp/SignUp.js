@@ -18,13 +18,14 @@ const SignUp = () => {
         setPassword(event.target.value)
     }
 
+    const handleConfirmPasswordBlur=event=>{
+        setConfirmPassword(event.target.value)
+    }
+
     if(user){
         navigate("/inventory")
     }
 
-    const handleConfirmPasswordBlur=event=>{
-        setConfirmPassword(event.target.value)
-    }
     const handleCreateUser=event=>{
         event.preventDefault();
         if(password!==confirmpassword){
@@ -34,7 +35,7 @@ const SignUp = () => {
         if(password.length<6){
             setError("password must be 6 characters or longer")
             return;
-        }
+    }
 
         createUserWithEmailAndPassword(email,password);
     }
@@ -62,7 +63,7 @@ const SignUp = () => {
             Already have an account? <Link className='form-link' to="/login">Login</Link>
         </p>
 
-        <input className='google-submit' type="text" value="Continue with Goggle" />
+        <input className='google-submit' readOnly type="text" value="Continue with Goggle" />
         </div>
         </div>
     );
